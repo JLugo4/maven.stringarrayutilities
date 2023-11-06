@@ -44,8 +44,11 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-        
-
+        for( String element : array){
+            if(element.equals(value)){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -54,7 +57,19 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        return null;
+        int left = 0;
+        int right = array.length -1;
+
+        while(left < right){
+            String temp = array[left];
+            array[left] = array[right];
+            array[right] = temp;
+
+            left++;
+            right--;
+        }
+
+        return array;
     }
 
     /**
